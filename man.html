@@ -1,0 +1,67 @@
+
+<script src="https://cdn.tailwindcss.com"></script>
+<section id="popular-books" class="bookshelf">
+	<div class="container">
+		<div class="flex justify-center items-center flex-col">
+
+			<div class="section-header text-center">
+				<div class="title">
+					<span>Some quality items</span>
+				</div>
+				<h2 class="section-title text-4xl font-bold mt-4 mb-8">Popular Books</h2>
+			</div>
+
+			<ul class="flex justify-center items-center flex-wrap mb-8">
+				<li data-tab-target="#all-genre"
+					class="active tab mr-4 mb-4 px-4 py-2 rounded-full border-2 border-gray-300 cursor-pointer">All
+					Genre</li>
+				<li data-tab-target="#business"
+					class="tab mr-4 mb-4 px-4 py-2 rounded-full border-2 border-gray-300 cursor-pointer">Business
+				</li>
+				<li data-tab-target="#technology"
+					class="tab mr-4 mb-4 px-4 py-2 rounded-full border-2 border-gray-300 cursor-pointer">Technology
+				</li>
+				<li data-tab-target="#romantic"
+					class="tab mr-4 mb-4 px-4 py-2 rounded-full border-2 border-gray-300 cursor-pointer">Romantic
+				</li>
+				<li data-tab-target="#adventure"
+					class="tab mr-4 mb-4 px-4 py-2 rounded-full border-2 border-gray-300 cursor-pointer">Adventure
+				</li>
+				<li data-tab-target="#fictional"
+					class="tab mr-4 mb-4 px-4 py-2 rounded-full border-2 border-gray-300 cursor-pointer">Fictional
+				</li>
+			</ul>
+
+
+
+			<div class="tab-content">
+				<div id="all-genre" data-tab-content class="active">
+					<div class="grid grid-cols-4 gap-8">
+
+						<div class="product-style">
+							<img src="images/tab-item1.jpg" alt="Books" class="product-item">
+							<button type="button"
+								class="add-to-cart bg-blue-500 text-white px-4 py-2 rounded-full mt-4 hover:bg-blue-600 focus:bg-blue-700">Add
+								to Cart</button>
+							<div class="mt-4">
+								<h3 class="text-lg font-bold">Portrait photography</h3>
+								<p>Adam Silber</p>
+								<div class="item-price font-bold mt-2">₵ 185.00</div>
+							</div>
+						</div>
+
+						<div class="product-style">
+							<img src="images/tab-item2.jpg" alt="Books" class="product-item">
+							<button type="button"
+								class="add-to-cart bg-blue-500 text-white px-4 py-2 rounded-full mt-4 hover:bg-blue-600 focus:bg-blue-700">Add
+								to Cart</button>
+							<div class="mt-4">
+								<h3 class="text-lg font-bold">Once upon a time</h3>
+								<p>Klien Marry</p>
+								<div class="item-price font-bold mt-2">₵ 200.00</div>
+							</div>
+						</div>
+
+						<div class="product-style">
+							<img src="images/tab-item3.jpg" alt="Books" class="product-item">
+							<button type="button" class="add-to-cart bg-blue-500 text-white px-4 py-2 rounded-full mt-4 hover:bg-blue-600 focus:bg
