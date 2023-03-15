@@ -1,13 +1,11 @@
 
 
-
-
 <?php  
 $book = $_GET['detail'];
 
 require_once "./template/header.php";
-require "../db/get_functions.php";
-$conn=db_connect();
+// require "../db/get_functions.php";
+$conn=db_config();
 
 
 
@@ -39,10 +37,7 @@ $conn=db_connect();
     <div class = "product-imgs">
       <div class = "img-display">
         <div class = "img-showcase">
-          <img src = "https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_1.jpg" alt = "shoe image">
-          <img src = "https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_2.jpg" alt = "shoe image">
-          <img src = "https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_3.jpg" alt = "shoe image">
-          <img src = "https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/shoe_4.jpg" alt = "shoe image">
+           <img src = "../admin/<?php echo $row['image']; ?>" alt = "shoe image">
         </div>
       </div>
     
@@ -87,7 +82,9 @@ $conn=db_connect();
         </button>
         
       </div>
-
+<!--  -->
+    </div>
+  <!-- </div>
       <div class = "social-links">
         <p>Share At: </p>
         <a href = "#">
@@ -105,9 +102,7 @@ $conn=db_connect();
         <a href = "#">
           <i class = "fab fa-pinterest"></i>
         </a>
-      </div>
-    </div>
-  </div>
+      </div> -->
 </div>
     </form>
 

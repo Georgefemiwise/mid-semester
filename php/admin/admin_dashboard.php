@@ -12,7 +12,7 @@
 			<ul class="font-medium px-4 text-left">
 				<li class="text-gray-100">
 					<button href="#performance" v-on:click="select('performance')" class="rounded text-sm text-left block py-3 px-6 hover:bg-blue-600 w-full">Performance</button>
-					<button href="#performance" v-on:click="select('new')" class="rounded text-sm block py-3 px-6 hover:bg-blue-600 w-full text-left">New</button>
+					<button href="#performance" v-on:click="select('new')" class="rounded text-sm block py-3 px-6 hover:bg-blue-600 w-full text-left"><a href="./admin_add.php">New</a> </button>
 
 				</li>
 			</ul>

@@ -1,8 +1,8 @@
 <?php
 
 require "./php/books/template/header.php";
-require "./php/db/conn_database.php";
-$conn = db_connect();
+// require "./php/db/conn_database.php";
+$conn = db_config();
 
 
 ?>
@@ -60,10 +60,12 @@ if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_array($result)) { ?>
     
 	<div class="product-card">
-	<a href="./php/books/detail.php">
+	<a href="./php/books/detail.php?detail=<?php echo $row['id']; ?>">
+
 		<div class="badge">Hot</div>
 		<div class="product-tumb">
-			<img src="https://i.imgur.com/xdbHo4E.png" alt="">
+            <img src="php/admin/<?php echo $row['image']; ?>" alt="Book Cover">
+
 		</div>
 		<div class="product-details">
 			<span class="product-catagory"><?php echo $row['category']; ?></span>

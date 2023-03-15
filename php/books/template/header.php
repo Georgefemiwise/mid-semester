@@ -1,4 +1,12 @@
 
+<?php
+// Set the base URL of the project
+define('BASE_URL', 'http://localhost/mid-semester/');
+
+// Require the database connection file
+require_once __DIR__ . '/../../db/conn_database.php';
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +21,7 @@
       integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
   
-    <title><?php echo $title = 'Home' ?></title>
+    
   </head>
 
  <body class="antialiased bg-gray-200 text-gray-900 font-sans p-6">
@@ -82,7 +90,7 @@
       <a href="#" class="font-bold text-gray-700 text-2xl">Shop.</a>
 
       <div class="hidden md:flex space-x-3 flex-1 lg:ml-8">
-        <a href="../../index.php" class="px-2 py-2 hover:bg-gray-100 rounded-lg text-gray-400 hover:text-gray-600">Home</a>
+        <a href="../../../index.php" class="px-2 py-2 hover:bg-gray-100 rounded-lg text-gray-400 hover:text-gray-600">Home</a>
       </div>
   
 
@@ -93,14 +101,27 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
         </div>
-
-        <a href="#" class="flex h-10 items-center px-2 rounded-lg border border-gray-200 hover:border-gray-300 focus:outline-none hover:shadow-inner">
+<a href="php/books/orders/add_to_cart.php" class="flex h-10 items-center px-2 rounded-lg border border-gray-200 hover:border-gray-300 focus:outline-none hover:shadow-inner">
           <svg class="h-6 w-6 leading-none text-gray-300 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
           </svg>
     
 
-          <span class="pl-1 text-gray-500 text-md"><?php echo $item_in_cart = 0 ?></span>
+          <span class="pl-1 text-gray-500 text-md">
+           <?php
+
+                    $query  = "SELECT COUNT(*) FROM cart";
+                    $result = mysqli_query(db_config(), $query);
+                    if (!$result) {
+                    echo "Can't retrieve data " . mysqli_error(db_config());
+                    exit;
+                    } else {
+                    $row   = mysqli_fetch_row($result);
+                    $count = $row[0];
+                    echo $count;
+                    }
+ ?>
+          </span>
         </a>
 
         <button type="button" class="hidden** md:block w-10 h-10 rounded-lg bg-gray-100 border border-gray-200 flex justify-center items-center">
