@@ -2,7 +2,7 @@
 <?php
 
 // Include necessary files
-include './template/header.php';
+// include './template/header.php';
 include '../db/conn_database.php';
 
 // Get database connection
@@ -111,13 +111,20 @@ if (empty($errors) == true) {
 						</div>
 						<!--categoryr-->
 						<div class="col-span-6 sm:col-span-3 lg:col-span-1">
-						<label for="country" class="block text-sm font-medium leading-6 text-gray-900">Category</label>
+						<label for="country" class="block text-sm font-medium leading-6 text-gray-900">Genra</label>
 						<select id="category"  name="category" autocomplete="cateegory-name" class="mt-2 block w-full rounded-md border-0 bg-white py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
 							<option disabled selected>choose</option>
 							<option value="fiction">fiction</option>
+							<option value="non-fiction">non-fiction</option>
+							<option value="fantasy">fantasy</option>
 							<option value="finance">finance</option>
 							<option value="inspiration">inspiration</option>
 							<option value="motivation">motivation</option>
+							<option value="Mystery">Mystery</option>
+							<option value="thriller">thriller</option>
+							<option value="self help">self help</option>
+							<option value="horror">horror</option>
+							<option value="romance">romance</option>
 						</select>
               			</div>
 					</div>

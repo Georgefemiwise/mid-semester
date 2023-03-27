@@ -1,0 +1,137 @@
+$dark: #131325;
+
+body {
+	background-color: $dark;
+}
+a{
+	text-decoration: none;
+}
+.container {
+	padding: 0 5em;
+	position: relative;
+}
+.container-inner {
+	display: grid;
+}
+.flex-row {
+	display: flex;
+	flex-flow: row;
+	align-items: center;
+}
+.flex-column {
+	display: flex;
+	flex-flow: column;
+}
+.center {
+	align-items: center;
+	// position:absolute;
+	// top:50%;
+	// left:50%;
+	// transform:translate(-50%,-50%);
+}
+.list {
+	border-radius: 3px;
+	overflow: hidden;
+	& .card {
+		margin-bottom: 10px;
+		perspective: 600px;
+		transition: all 0.1s;
+		& .bottom {
+			height: 0px;
+			overflow: hidden;
+			width: 200px;
+			font-size: 12px;
+			color: #777;
+			font-weight: normal;
+		}
+
+		& button.simple {
+			cursor: pointer;
+			margin-top: 2px;
+			min-width: 8em;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-transform: capitalize;
+			color: #ccc;
+			border: none;
+			outline: none;
+			border-radius: 4px;
+
+			padding: 15px 20px;
+			font-family: 'Montserrat';
+			font-weight: bold;
+			transition: all 0.1s;
+			&:hover {
+				box-shadow: 0px 15px 20px -5px rgba(0, 0, 0, 0.3);
+				transform: translate(0, -2px);
+			}
+		}
+		background-color: lighten($dark, 8%);
+		box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+		overflow: hidden;
+		height: 90px;
+		& .book {
+			transition: all 0.5s;
+			width: 70px;
+			height: 100%;
+			box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+			overflow: hidden;
+			margin: 0 3em;
+		}
+		& .info {
+			transition: all 0.2s;
+			max-width: 120px;
+			// padding:0px 30px;
+			font-family: 'Montserrat';
+			font-weight: bold;
+			// border: #FFF solid 1px;
+			& input{
+					width:5em;
+					color: red;
+				}
+			& .title {
+				font-size: 0.8em;
+				color: #fff;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+				//  border: #FFF solid 1px;
+			}
+			& .author {
+				font-size: 18px;
+				font-weight: normal;
+				color: #888;
+				text-transform: capitalize;
+				margin-top: .5em;
+				
+			}
+		}
+
+		&.open {
+			padding: 30px 1px;
+			height: auto;
+			& .bottom {
+				margin-top: 10px;
+				height: 100%;
+				overflow: visible;
+			}
+
+			& .info {
+				transform: translate(0, -10px);
+			}
+			& .members {
+				padding: 15px 20px;
+				border-radius: 4px;
+				align-self: flex-start;
+			}
+		}
+	}
+}
+
+.space {
+	margin-left: 5em;
+}
+input{
+	width: fit-content;
+	color: blue;
+}

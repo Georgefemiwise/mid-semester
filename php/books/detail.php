@@ -5,9 +5,7 @@ $book = $_GET['detail'];
 
 require_once "./template/header.php";
 // require "../db/get_functions.php";
-$conn=db_config();
-
-
+$conn = db_config();
 
 
   $query = "SELECT * FROM book WHERE id = '$book'";
@@ -29,7 +27,7 @@ $conn=db_config();
 
 
 
- <form method="post" action="./orders/add_to_cart.php">
+ <form method="post" action="./orders/cart/cart.php">
 <div class = "card-wrapper">
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-fZtHHnpdRlRbawIzBk1K41JqaDMopQ2m3+1zVfW9XZtE/5MJFDL/EBFPw65wLbScy5eqN1aSD5K8r+PpXvPlw==" crossorigin="anonymous" /> -->
   <div class = "card">
@@ -72,37 +70,24 @@ $conn=db_config();
         </ul>
       </div>
       
-     <input type="hidden" name="hidden_title"  value="<?php echo $row['title']; ?>">
-      <input type="hidden" name="hidden_price"  value="<?php echo $row['price']; ?>">
+
+
+      <input type="hidden" name="hidden_author"  value="<?php echo $row['author']; ?>">
+            <input type="hidden" name="hidden_price"  value="<?php echo $row['price']; ?>">
+            <input type="hidden" name="hidden_title"  value="<?php echo $row['title']; ?>">
+            <input type="hidden" name="hidden_category"  value="<?php echo $row['category']; ?>">
+            <input type="hidden" name="hidden_image"  value="<?php echo $row['image']; ?>">
 
       <div class = "purchase-info">
-        <input type = "number" min = "1" value = "1" name="quantity">
+        <input type = "number" min = "1" value = "1" name="hidden_quantity">
         <button type = "submit" class = "btn" name="add_to_cart">
           Add to Cart <i class = "fas fa-shopping-cart"></i>
         </button>
         
       </div>
-<!--  -->
+
     </div>
-  <!-- </div>
-      <div class = "social-links">
-        <p>Share At: </p>
-        <a href = "#">
-          <i class = "fab fa-facebook-f"></i>
-        </a>
-        <a href = "#">
-          <i class = "fab fa-twitter"></i>
-        </a>
-        <a href = "#">
-          <i class = "fab fa-instagram"></i>
-        </a>
-        <a href = "#">
-          <i class = "fab fa-whatsapp"></i>
-        </a>
-        <a href = "#">
-          <i class = "fab fa-pinterest"></i>
-        </a>
-      </div> -->
+  
 </div>
     </form>
 
@@ -348,9 +333,9 @@ img{
 			<img alt="ecommerce" class="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200"
 				src="https://www.whitmorerarebooks.com/pictures/medium/2465.jpg">
 			<div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-				<h1 class="text-gray-900 text-3xl title-font font-medium mb-1 capitalize"><?php echo $row['title']; ?></h1>
+				<h1 class="text-gray-900 text-3xl title-font font-medium mb-1 capitalize"><?php //echo $row['title']; ?></h1>
 				
-				<p class="leading-relaxed capitalize"><?php echo $row['description']; ?>.</p>
+				<p class="leading-relaxed capitalize"><?php// echo $row['description']; ?>.</p>
 				<div class="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5"></div>
 				<div class="flex">
 					<span class="title-font font-medium text-2xl text-gray-900"></span>
