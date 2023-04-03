@@ -97,8 +97,10 @@ body {
 			font-weight: bold;
 			transition: all 0.1s;
 			&:hover {
-				box-shadow: 0px 15px 20px -5px rgba(0, 0, 0, 0.3);
-				transform: translate(0, -2px);
+			background-color: #32c52abc;
+				
+				
+			
 			}
 		}
 		background-color: lighten($dark, 8%);

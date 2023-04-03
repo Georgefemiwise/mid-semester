@@ -1,74 +1,194 @@
-<body class="flex items-center justify-center w-screen min-h-screen bg-gray-100 text-gray-800 p-8">
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial;
+  font-size: 17px;
+  padding: 8px;
+}
 
-	<!-- Component Start -->
-	<div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8 w-full max-w-screen-lg">
-		<div class="lg:col-span-2">
-			<h2 class="text-sm font-medium">Payment Method</h2>
-			<div class="bg-white rounded mt-4 shadow-lg">
-				<div class="flex items-center px-8 py-5">
-						<input class="appearance-none w-4 h-4 rounded-full border-2 border-white ring-2 ring-blue-600 ring-opacity-100" type="radio">
-						<label class="text-sm font-medium ml-4">PayPal</label>
-					</div>
-				<div class="border-t">
-					<div class="flex items-center px-8 py-5">
-						<input class="appearance-none w-4 h-4 rounded-full border-2 border-white ring-2 ring-blue-600 ring-opacity-100 bg-blue-600" type="radio">
-						<label class="text-sm font-medium ml-4">Credit Card</label>
-					</div>
-					<div class="grid grid-cols-2 gap-4 px-8 pb-8">
-						<div class="col-span-2">
-							<label class="text-xs font-semibold" for="cardNumber">Card number</label>
-							<input class="flex items-center h-10 border mt-1 rounded px-4 w-full text-sm" type="text" placeholder="0000 0000 0000 0000">	
-						</div>
-						<div class="">
-							<label class="text-xs font-semibold" for="cardNumber">Expiry Date</label>
-							<input class="flex items-center h-10 border mt-1 rounded px-4 w-full text-sm" type="text" placeholder="MM/YY">	
-						</div>
-						<div class="">
-							<label class="text-xs font-semibold" for="cardNumber">CVC/CVV</label>
-							<input class="flex items-center h-10 border mt-1 rounded px-4 w-full text-sm" type="password" placeholder="...">	
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div>
-			<h2 class="text-sm font-medium">Purchase Summary</h2>
-			<div class="bg-white rounded mt-4 shadow-lg py-6">
-				<div class="px-8">
-					<div class="flex items-end">
-						<select class="text-sm font-medium focus:outline-none -ml-1" name="" id="">
-							<option value="">Product (Billed Monthly)</option>
-							<option value="">Product (Billed Annually)</option>
-						</select>
-						<span class="text-sm ml-auto font-semibold">$20</span>
-						<span class="text-xs text-gray-500 mb-px">/mo</span>
-					</div>
-					<span class="text-xs text-gray-500 mt-2">Save 20% with annual billing</span>
-				</div>
-				<div class="px-8 mt-4">
-					<div class="flex items-end justify-between">
-						<span class="text-sm font-semibold">Tax</span>
-						<span class="text-sm text-gray-500 mb-px">10%</span>
-					</div>
-				</div>
-				<div class="px-8 mt-4 border-t pt-4">
-					<div class="flex items-end justify-between">
-						<span class="font-semibold">Today you pay (AUD)</span>
-						<span class="font-semibold">$0</span>
-					</div>
-					<span class="text-xs text-gray-500 mt-2">After 1 month free: $22/mo.</span>
-				</div>
-				<div class="flex items-center px-8 mt-8">
-					<input id="termsConditions" type="checkbox">
-					<label class="text-xs text-gray-500 ml-2" for="termsConditions">I agree to the terms and conditions.</label>
-				</div>
-				<div class="flex flex-col px-8 pt-4">
-					<button class="flex items-center justify-center bg-blue-600 text-sm font-medium w-full h-10 rounded text-blue-50 hover:bg-blue-700">Start Subscription</button>
-					<button class="text-xs text-blue-500 mt-3 underline">Have a coupon code?</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Component End  -->
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+a {
+  color: #2196F3;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- <h2>Responsive Checkout Form</h2>
+<p>Resize the browser window to see the effect. When the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other.</p> -->
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+      <form action="/action_page.php">
+      
+        <div class="row">
+          <div class="col-50">
+            <h3>Billing Address</h3>
+            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" id="email" name="email" placeholder="john@example.com">
+            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+            <label for="city"><i class="fa fa-institution"></i> City</label>
+            <input type="text" id="city" name="city" placeholder="New York">
+
+            <div class="row">
+              <div class="col-50">
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" placeholder="NY">
+              </div>
+              <div class="col-50">
+                <label for="zip">Zip</label>
+                <input type="text" id="zip" name="zip" placeholder="10001">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-50">
+            <h3>Payment</h3>
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+            <label for="ccnum">Credit card number</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+            <label for="expmonth">Exp Month</label>
+            <input type="text" id="expmonth" name="expmonth" placeholder="September">
+            <div class="row">
+              <div class="col-50">
+                <label for="expyear">Exp Year</label>
+                <input type="text" id="expyear" name="expyear" placeholder="2018">
+              </div>
+              <div class="col-50">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="352">
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <label>
+          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+        </label>
+        <input type="submit" value="Continue to checkout" class="btn">
+      </form>
+    </div>
+  </div>
+  <div class="col-25">
+    <div class="container">
+      <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>4</b></span></h4>
+      <p><a href="#">Product 1</a> <span class="price">$15</span></p>
+      <p><a href="#">Product 2</a> <span class="price">$5</span></p>
+      <p><a href="#">Product 3</a> <span class="price">$8</span></p>
+      <p><a href="#">Product 4</a> <span class="price">$2</span></p>
+      <hr>
+      <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+    </div>
+  </div>
+</div>
 
 </body>
+</html>

@@ -10,6 +10,11 @@ a {
   padding: 0 5em;
   position: relative;
 }
+.container h2 {
+  color: white;
+  margin-top: 2em;
+  font-size: 2em;
+}
 
 .container-inner {
   display: grid;
@@ -129,4 +134,4 @@ input {
   width: -moz-fit-content;
   width: fit-content;
   color: blue;
-}/*# sourceMappingURL=cart.css.map */
+}/*# sourceMappingURL=style-cart.css.map */

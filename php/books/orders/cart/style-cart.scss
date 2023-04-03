@@ -3,12 +3,18 @@ $dark: #131325;
 body {
 	background-color: $dark;
 }
-a{
+a {
 	text-decoration: none;
 }
 .container {
 	padding: 0 5em;
 	position: relative;
+
+	& h2 {
+		color: white;
+		margin-top: 2em;
+		font-size: 2em;
+	}
 }
 .container-inner {
 	display: grid;
@@ -86,10 +92,10 @@ a{
 			font-family: 'Montserrat';
 			font-weight: bold;
 			// border: #FFF solid 1px;
-			& input{
-					width:5em;
-					color: red;
-				}
+			& input {
+				width: 5em;
+				color: red;
+			}
 			& .title {
 				font-size: 0.8em;
 				color: #fff;
@@ -102,8 +108,7 @@ a{
 				font-weight: normal;
 				color: #888;
 				text-transform: capitalize;
-				margin-top: .5em;
-				
+				margin-top: 0.5em;
 			}
 		}
 
@@ -131,7 +136,7 @@ a{
 .space {
 	margin-left: 5em;
 }
-input{
+input {
 	width: fit-content;
 	color: blue;
 }

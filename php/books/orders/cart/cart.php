@@ -59,9 +59,9 @@ $sql_cart_items = mysqli_query($conn, "SELECT * FROM cart");
 
 
 
-<link rel="stylesheet" href="cart.css">
+<link rel="stylesheet" href="style-cart.css">
 <div class='container'>
-	<h2>books</h2>
+	<h2>Cart Items</h2>
 		<div class='container-inner'>
 			<div class='center list flex-column '>
 				
@@ -174,9 +174,9 @@ $sql_cart_items = mysqli_query($conn, "SELECT * FROM cart");
 				<!-- =============symm==================== -->
 
 				<div class='card flex-row open '>
-					<img src="../../../admin/<?php echo $row['image']; ?>" alt=" Book Cover" class='book'>
+					<!-- <img src="../../../admin/<?php echo $row['image']; ?>" alt=" Book Cover" class='book'> -->
 
-					<div class='flex-column info'>
+					<div style="padding-left: 4em;" class='flex-column info '>
 						<div class='author'>items in your cart: <span class='title'><?php echo getCount($conn,'cart'); ?></span> </div>
 						<div class='hidden bottom summary'>
 							......................
@@ -190,8 +190,8 @@ $sql_cart_items = mysqli_query($conn, "SELECT * FROM cart");
 
 
 					<div class='hidden bottom'>
-						<button class='simple ' name='checkout'
-							style="	background-color: #1ea94b;">checkout</button>
+						<a href="../checkout.php"><button class='simple ' name='checkout'
+							style="	background-color: #1ea94b;">checkout</button></a>
 
 						<a href="../../../../"><button class='simple '
 								style="	background-color: #4b0eaf;">continue

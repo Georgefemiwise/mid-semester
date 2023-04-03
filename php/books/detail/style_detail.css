@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  background-color: #131325;
+  color: white;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+.card-wrapper {
+  width: 100%;
+}
+.card-wrapper .card {
+  padding: 4em 6em;
+  display: grid;
+  grid-template-columns: 30% auto;
+}
+.card-wrapper .card .img-cover {
+  display: flex;
+  width: 100%;
+  transition: all 0.5s ease;
+}
+.card-wrapper .card .product-content {
+  padding: 1rem 3rem;
+}
+.card-wrapper .card .product-title {
+  font-size: 3rem;
+  text-transform: capitalize;
+  font-weight: 700;
+  position: relative;
+  margin: 1rem 0;
+}
+.card-wrapper .card .product-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 80px;
+  background: #d903ff;
+}
+.card-wrapper .card .product-rating {
+  color: #07ffb5;
+}
+.card-wrapper .card .product-rating span {
+  font-weight: 600;
+  color: #ffffff;
+}
+.card-wrapper .card .product-price {
+  margin: 1rem 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.card-wrapper .card .product-price span {
+  font-weight: 400;
+  color: #d35680;
+}
+.card-wrapper .card .product-detail h2 {
+  text-transform: capitalize;
+  color: #63d68d;
+  padding-bottom: 0.6rem;
+}
+.card-wrapper .card .product-detail p {
+  font-size: 0.9rem;
+  padding: 0.3rem;
+  opacity: 0.8;
+  width: 50em;
+}
+.card-wrapper .card .product-detail ul {
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  list-style-type: square;
+  margin-left: 1.5em;
+}
+.card-wrapper .card .product-detail ul li {
+  margin: 0;
+  list-style: none;
+  background: url(https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/checked.png) left center no-repeat;
+  background-size: 18px;
+  padding-left: 1.7rem;
+  margin: 0.4rem 0;
+  font-weight: 600;
+  opacity: 0.9;
+}
+.card-wrapper .card .product-detail ul li span {
+  font-weight: 400;
+}
+.card-wrapper .card .purchase-info {
+  margin: 1.5rem 0;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.card-wrapper .card .purchase-info input,
+.card-wrapper .card .purchase-info .btn {
+  border: 1.5px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+  padding: 0.45rem 0.8rem;
+  outline: 0;
+  margin-right: 0.2rem;
+  margin-bottom: 1rem;
+  width: 2em;
+}
+.card-wrapper .card .purchase-info input {
+  width: 60px;
+}
+.card-wrapper .card .purchase-info .btn {
+  cursor: pointer;
+  color: #fff;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-wrapper .card .purchase-info .btn:first-of-type {
+  background: #256eff;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.card-wrapper .card .purchase-info .btn:hover {
+  opacity: 0.9;
+}
+.card-wrapper .card .purchase-info .btn svg {
+  background-color: transparent;
+  margin-right: 7px;
+  width: 1.5em;
+  fill: #131325;
+}/*# sourceMappingURL=style_detail.css.map */

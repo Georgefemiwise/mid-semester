@@ -5,7 +5,7 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Document</title>
+		
 	</head>
 <style><?php require_once __DIR__ . './style.css'; ?></style> 
 
@@ -29,7 +29,46 @@ function getCount($conn, $table)
  return $count;
 }
 
+
+
+
+//TODO create a search function
+function search($conn, $table)
+{
+ $query  = "SELECT * FROM book where like %$table%";
+ $result = mysqli_query($conn, $query);
+
+ if ($result) {
+  $row   = mysqli_fetch_row($result);
+  $count = $row[0];
+ } else {
+  echo "Can't retrieve data " . mysqli_error($conn);
+  exit;
+ }
+ return $count;
+}
+
+
+
+$query  = "SELECT category FROM book";
+$result = mysqli_query($conn, $query);
+
+
+
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -47,12 +86,17 @@ function getCount($conn, $table)
 				<div class="search-group">
 					<select>
 						<option value="all">All</option>
-						<option value="all">Mens</option>
-						<option value="all">Womens</option>
-						<option value="all">Winter</option>
-						<option value="all">Summer</option>
+				<?php
+				 if (mysqli_num_rows($result) > 0) {
+					while ($row = mysqli_fetch_array($result)) { ?>
+
+								
+						<option value='<?php echo $row['category'] ?>'><?php echo $row['category'] ?></option>
+					
+					
+									<?php }} ?>
 					</select>
-					<input type="text">
+					<input type="search">
 				
 						<svg class='icon' width="50" height="20" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" d="M9.6 4.8a4.8 4.8 0 1 0 0 9.6 4.8 4.8 0 0 0 0-9.6ZM2.4 9.6a7.2 7.2 0 1 1 13.068 4.171l5.78 5.78a1.2 1.2 0 0 1-1.696 1.697l-5.78-5.779A7.2 7.2 0 0 1 2.4 9.6Z" clip-rule="evenodd"></path>
@@ -62,7 +106,7 @@ function getCount($conn, $table)
 			</div>
 
 
-			<a href="" class="item">
+			<a href="php/books/orders/cart/cart.php" class="item">
 				<div class="group">
 					<svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"
 						xmlns="http://www.w3.org/2000/svg">
