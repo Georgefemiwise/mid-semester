@@ -10,7 +10,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 </head> 
 <body>
-<?php header("refresh:3") ?>
+<?php //header("refresh:3") ?>
 
 <div class="navbar bg-base-400">
   <div class="flex-1">
@@ -61,7 +61,7 @@ $result = mysqli_query($conn, $query);
  
   
   <div class="stat border border-orange-500 text-center">
-    <div class="stat-title">Total books</div>
+    <div class="stat-title">Total orders</div>
     <div class="stat-value "><?php echo getCount($conn, 'orders')?></div>
   </div>
  
@@ -91,7 +91,7 @@ $result = mysqli_query($conn, $query);
     <!-- head -->
     <thead>
       <tr>
-        <th></th>
+       
         <th>Name</th>
         <th>email</th>
         <th>addres</th>
@@ -114,9 +114,9 @@ $result = mysqli_query($conn, $query);
 			<td><?php echo $row["buyer_address"]; ?></td>
 			<td><?php echo $row["buyer_city"]; ?></td>
 			<td><?php echo $row["buyer_region"]; ?></td>
-			<td><?php echo $row["buyer_zip_code	"]; ?></td>
+			<td><?php echo $row["buyer_zip_code"]; ?></td>
 			<td><?php echo $row["buyer_payment_method"]; ?></td>		
-			<td><?php echo $row["orders	"]; ?></td>
+			<td class="break-all "><?php echo $row["orders"]; ?></td>
 			<td><?php echo $row["order_total_cost"]; ?></td>
 			<td><?php echo $row["status"]; ?></td>
 				

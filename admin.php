@@ -1,2 +1,2 @@
 
-<?php header("Location: ./php/admin/admin_dashboard.php"); ?>
+<?php header("Location: ./auth/login_form.php"); ?>

@@ -1,0 +1,47 @@
+CREATE TABLE book (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    author VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    category VARCHAR(255) NOT NULL,
+    image VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+
+CREATE TABLE users (
+  id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  user_type ENUM('user', 'admin') DEFAULT 'user',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE orders (
+  id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  buyer_name VARCHAR(255) NOT NULL,
+  buyer_email VARCHAR(255) NOT NULL,
+  buyer_address VARCHAR(255) NOT NULL,
+  buyer_city VARCHAR(255) NOT NULL,
+  buyer_region VARCHAR(255) NOT NULL,
+  buyer_zip_code VARCHAR(255) NOT NULL,
+  buyer_payment_method VARCHAR(255) NOT NULL,
+  orders TEXT NOT NULL,
+  order_total_cost DECIMAL(10, 2) NOT NULL,
+  status VARCHAR(255) DEFAULT 'Pending',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE cart (
+  id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  quantity INT(11) NOT NULL,
+  image VARCHAR(255),
+  price DECIMAL(10, 2) NOT NULL,
+  author VARCHAR(255),
+  category VARCHAR(255),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
