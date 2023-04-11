@@ -56,13 +56,13 @@ $result = mysqli_query($conn, $query);
 	<nav class="navbar">
 		<i class="material-icons menu-icon">menu</i>
 		<div class="logo">
-			<div class="text"> GrabCheap </div>
+			<div class="text"> Shop. </div>
 		</div>
 		<div class="item search right" tabindex="0">
 			<form action="" method="get">
 				<div class="search-group">
-					<input type="search" placeholder="Books, author, Desc" name="search_query">
-					<button type="submit" name="search_btn">Search</button>
+					<input style="color: black; width: 10em;" type="search" placeholder="Books, author, Desc" name="search_query">
+					<button style="color: black;" type="submit" name="search_btn">Search</button>
 				</div>
 			</form>
 		</div>
@@ -72,5 +72,6 @@ $result = mysqli_query($conn, $query);
 				<div class="sub"><?php echo getCount($conn, 'cart')?></div>
 			</div>
 		</a>
+			<a href="./auth/login_form.php"><div style="margin-left: 2em;" class="text"> login/sign up </div></a>
 	</nav>
 </body>

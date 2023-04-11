@@ -18,9 +18,9 @@
   </div>
   <div class="flex-none">
     <ul class="menu menu-horizontal px-1">
-      <li><a>Add book</a></li>
+      <li><a href="./admin_add.php">Add book</a></li>
 
-      <li><a>Delete book</a></li>
+      <!-- <li><a>Delete book</a></li> -->
     </ul>
   </div>
 </div>
