@@ -4,7 +4,7 @@
   padding: 0;
   margin: 0;
   font-family: "Open Sans", sans-serif;
-  background-color: #131325;
+  background-color: #3F3A58;
   color: white;
 }
 
@@ -15,11 +15,13 @@ img {
 
 .card-wrapper {
   width: 100%;
+  padding: 3em;
 }
 .card-wrapper .card {
   padding: 4em 6em;
   display: grid;
   grid-template-columns: 30% auto;
+  border: rgba(221, 221, 221, 0.2901960784) solid;
 }
 .card-wrapper .card .img-cover {
   display: flex;
@@ -30,9 +32,9 @@ img {
   padding: 1rem 3rem;
 }
 .card-wrapper .card .product-title {
-  font-size: 3rem;
-  text-transform: capitalize;
-  font-weight: 700;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: bolder;
   position: relative;
   margin: 1rem 0;
 }
@@ -41,29 +43,22 @@ img {
   position: absolute;
   left: 0;
   bottom: 0;
-  height: 4px;
-  width: 80px;
-  background: #d903ff;
-}
-.card-wrapper .card .product-rating {
-  color: #07ffb5;
-}
-.card-wrapper .card .product-rating span {
-  font-weight: 600;
-  color: #ffffff;
+  height: 5px;
+  width: 8em;
+  background: #EA5B5B;
 }
 .card-wrapper .card .product-price {
   margin: 1rem 0;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 200;
 }
 .card-wrapper .card .product-price span {
-  font-weight: 400;
-  color: #d35680;
+  font-weight: 700;
+  color: #fff;
 }
 .card-wrapper .card .product-detail h2 {
   text-transform: capitalize;
-  color: #63d68d;
+  color: #FBD894;
   padding-bottom: 0.6rem;
 }
 .card-wrapper .card .product-detail p {
@@ -72,24 +67,28 @@ img {
   opacity: 0.8;
   width: 50em;
 }
-.card-wrapper .card .product-detail ul {
+.card-wrapper .card .product-detail .ul {
   margin: 1rem 0;
   font-size: 0.9rem;
   list-style-type: square;
   margin-left: 1.5em;
+  display: flex;
 }
-.card-wrapper .card .product-detail ul li {
-  margin: 0;
-  list-style: none;
-  background: url(https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/checked.png) left center no-repeat;
-  background-size: 18px;
-  padding-left: 1.7rem;
+.card-wrapper .card .product-detail .ul p {
+  margin-left: 1em;
+  padding-left: 2rem;
   margin: 0.4rem 0;
   font-weight: 600;
-  opacity: 0.9;
 }
-.card-wrapper .card .product-detail ul li span {
+.card-wrapper .card .product-detail .ul p span {
   font-weight: 400;
+}
+.card-wrapper .card .product-detail .product-rating {
+  display: block;
+}
+.card-wrapper .card .product-detail .product-rating span {
+  font-weight: 600;
+  color: #ffffff;
 }
 .card-wrapper .card .purchase-info {
   margin: 1.5rem 0;
@@ -99,7 +98,7 @@ img {
 }
 .card-wrapper .card .purchase-info input,
 .card-wrapper .card .purchase-info .btn {
-  border: 1.5px solid #ddd;
+  border: 1.5px solid rgba(221, 221, 221, 0.2901960784);
   border-radius: 5px;
   text-align: center;
   padding: 0.45rem 0.8rem;
@@ -117,9 +116,11 @@ img {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  font-weight: bolder;
+  padding: 0.5em 4em;
 }
 .card-wrapper .card .purchase-info .btn:first-of-type {
-  background: #256eff;
+  background: #15DBA7;
   width: -moz-fit-content;
   width: fit-content;
 }
@@ -130,5 +131,5 @@ img {
   background-color: transparent;
   margin-right: 7px;
   width: 1.5em;
-  fill: #131325;
+  fill: #3F3A58;
 }/*# sourceMappingURL=style_detail.css.map */

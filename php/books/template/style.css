@@ -78,7 +78,7 @@ body {
 .item .search-group {
   display: flex;
   width: 100%;
-  max-width: 700px;
+  max-width: 1000px;
   border-radius: 2px;
   border: 2px solid grey;
   overflow: hidden;
@@ -102,7 +102,8 @@ body {
   font-size: 0.9em;
 }
 
-.item .group .sub, .detail {
+.item .group .sub,
+.detail {
   font-size: 1em;
   margin-left: 5px;
 }
@@ -115,6 +116,15 @@ body {
   display: none;
 }
 
+footer {
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+}
+footer a {
+  position: absolute;
+}
+
 @media (max-width: 700px) {
   .item.search input {
     display: none;
@@ -122,7 +132,8 @@ body {
   .menu-icon {
     display: block;
   }
-  .detail, .logo .text {
+  .detail,
+  .logo .text {
     display: none;
   }
 }/*# sourceMappingURL=style.css.map */

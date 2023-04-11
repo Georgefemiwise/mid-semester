@@ -1,5 +1,6 @@
 <?php
 session_start();
+// header('refresh:3');
 
 
 // connection
@@ -10,7 +11,7 @@ $conn = db_config();
 // header('Location: ../../../index.php');
 
 
-if (isset($_POST['add_to_cart']) or isset($_POST['addToCart'])) {
+if (isset($_POST['add_to_cart'])) {
 
  $author   = $_POST["hidden_author"];
  $title    = $_POST["hidden_title"];
@@ -32,7 +33,7 @@ if (isset($_POST['add_to_cart']) or isset($_POST['addToCart'])) {
 }
 
 
-//get totall in cart
+//get totall in cart count
 function getCount($conn, $table)
 {
  $query  = "SELECT COUNT(*) FROM $table";
@@ -121,8 +122,8 @@ $sql_cart_items = mysqli_query($conn, "SELECT * FROM cart");
 					<div class='flex-column group'>
 
 						<div class='hidden bottom'>
-							<button type="submit" class='simple' name='update'
-								style="	background-color: #1ea94b;">update</button>
+							<button type="submit" class='simple bg-green' name='update'
+								>update</button>
 								
 						
 					<?php 
@@ -135,7 +136,7 @@ $sql_cart_items = mysqli_query($conn, "SELECT * FROM cart");
 
 								$message = "Item deleted successfully";
 								// Reload the page
-								header("Refresh:1");
+								header("Refresh:0");
 
 								}
 
@@ -143,8 +144,8 @@ $sql_cart_items = mysqli_query($conn, "SELECT * FROM cart");
 								$message = "Error deleting item: " . $conn->error;}				?>
 			
 
-							<button class='simple' name='delete'
-								style="margin-top: 3px;	background-color: #b21c14;">delete</button>
+							<button class='simple bg-red' name='delete'
+								style="margin-top: 3px;">delete</button>
 					<?php 
 						if (isset($_POST['delete'])) {
 							$book_id    = $_GET['book_id'];
@@ -152,7 +153,7 @@ $sql_cart_items = mysqli_query($conn, "SELECT * FROM cart");
 							if ($conn->query($sql_delete) === true) {
 								$message = "Item deleted successfully";
 								// Reload the pagehttp: //
-									header("Refresh:1");
+									header("Refresh:0");
 
 								}
 
@@ -190,11 +191,11 @@ $sql_cart_items = mysqli_query($conn, "SELECT * FROM cart");
 
 
 					<div class='hidden bottom'>
-						<a href="../checkout.php"><button class='simple ' name='checkout'
-							style="	background-color: #1ea94b;">checkout</button></a>
+						<a href="../checkout/checkout.php"><button class='simple  bg-green' name='checkout'
+							>checkout</button></a>
 
-						<a href="../../../../"><button class='simple '
-								style="	background-color: #4b0eaf;">continue
+						<a href="../../../../"><button class='simple bg-orange'
+								>continue
 								shoping</button></a>
 					</div>
 				</div>

@@ -32,23 +32,6 @@ function getCount($conn, $table)
 
 
 
-//TODO create a search function
-function search($conn, $table)
-{
- $query  = "SELECT * FROM book where like %$table%";
- $result = mysqli_query($conn, $query);
-
- if ($result) {
-  $row   = mysqli_fetch_row($result);
-  $count = $row[0];
- } else {
-  echo "Can't retrieve data " . mysqli_error($conn);
-  exit;
- }
- return $count;
-}
-
-
 
 $query  = "SELECT category FROM book";
 $result = mysqli_query($conn, $query);
@@ -69,58 +52,25 @@ $result = mysqli_query($conn, $query);
 
 
 
-
-
-
-	<body>
-
-		<nav class="navbar">
-			<i class="material-icons menu-icon">
-				menu
-			</i>
-			<div class="logo">
-				<div class="text"> GrabCheap
-				</div>
-			</div>
-			<div class="item search right" tabindex="0">
+<body>
+	<nav class="navbar">
+		<i class="material-icons menu-icon">menu</i>
+		<div class="logo">
+			<div class="text"> GrabCheap </div>
+		</div>
+		<div class="item search right" tabindex="0">
+			<form action="" method="get">
 				<div class="search-group">
-					<select>
-						<option value="all">All</option>
-				<?php
-				 if (mysqli_num_rows($result) > 0) {
-					while ($row = mysqli_fetch_array($result)) { ?>
-
-								
-						<option value='<?php echo $row['category'] ?>'><?php echo $row['category'] ?></option>
-					
-					
-									<?php }} ?>
-					</select>
-					<input type="search">
-				
-						<svg class='icon' width="50" height="20" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" d="M9.6 4.8a4.8 4.8 0 1 0 0 9.6 4.8 4.8 0 0 0 0-9.6ZM2.4 9.6a7.2 7.2 0 1 1 13.068 4.171l5.78 5.78a1.2 1.2 0 0 1-1.696 1.697l-5.78-5.779A7.2 7.2 0 0 1 2.4 9.6Z" clip-rule="evenodd"></path>
-</svg>
-					
+					<input type="search" placeholder="Books, author, Desc" name="search_query">
+					<button type="submit" name="search_btn">Search</button>
 				</div>
+			</form>
+		</div>
+		<a href="php/books/orders/cart/cart.php" class="item">
+			<div class="group">
+				<div class="detail"> Cart </div>
+				<div class="sub"><?php echo getCount($conn, 'cart')?></div>
 			</div>
-
-
-			<a href="php/books/orders/cart/cart.php" class="item">
-				<div class="group">
-					<svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"
-						xmlns="http://www.w3.org/2000/svg">
-						<path
-							d="M3.6 1.2a1.2 1.2 0 0 0 0 2.4h1.464l.366 1.466.012.05 1.63 6.517L6 12.703C4.488 14.215 5.558 16.8 7.697 16.8H18a1.2 1.2 0 1 0 0-2.4H7.697l1.2-1.2H16.8a1.199 1.199 0 0 0 1.073-.664l3.6-7.2A1.2 1.2 0 0 0 20.4 3.6H7.536l-.372-1.492A1.2 1.2 0 0 0 6 1.2H3.6Zm15.6 18.6a1.8 1.8 0 1 1-3.6 0 1.8 1.8 0 0 1 3.6 0ZM7.8 21.6a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6Z">
-						</path>
-					</svg>
-					<div class="detail">
-						Cart
-					</div>
-						<div class="sub"><?php echo getCount($conn, 'cart')?></div>
-				</div>
-			</a>
-		</nav>
-	</body>
-
-</html>
+		</a>
+	</nav>
+</body>

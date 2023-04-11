@@ -1,25 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
-
-$dark: #131325;
-
-// Color Codes	Tags
-// EA5B5B.png	
-$red: #EA5B5B;
-// RGB: 234, 91, 91
-// CMYK: 0, 61.1, 61.1, 8.2
-// HSV: 0, 61, 92
-// EA5B5B
-// mandy
-// red
 	
-$yellow_orange: #FBD894;
-
-
-
+$red: #EA5B5B;
+$orange: #FBD894;
 $blue_violet: #3F3A58;
-
-
-$blue_green: #15DBA7;
+$green: #15DBA7;
 
 
 
@@ -34,7 +18,7 @@ $blue_green: #15DBA7;
 	padding: 0;
 	margin: 0;
 	font-family: 'Open Sans', sans-serif;
-	background-color: $dark;
+	background-color: $blue_violet;
 	color: white;
 }
 
@@ -44,11 +28,13 @@ img {
 }
 .card-wrapper {
 	width: 100%;
+	padding: 3em;
 
 	& .card {
 		padding: 4em 6em;
 		display: grid;
 		grid-template-columns: 30% auto;
+		border: #dddddd4a solid;
 
 		& .img-cover {
 			display: flex;
@@ -60,9 +46,9 @@ img {
 			padding: 1rem 3rem;
 		}
 		& .product-title {
-			font-size: 3rem;
-			text-transform: capitalize;
-			font-weight: 700;
+			font-size: 3.5rem;
+			text-transform: uppercase;
+			font-weight: bolder;
 			position: relative;
 			margin: 1rem 0;
 
@@ -71,34 +57,27 @@ img {
 				position: absolute;
 				left: 0;
 				bottom: 0;
-				height: 4px;
-				width: 80px;
-				background: #d903ff;
+				height: 5px;
+				width: 8em;
+				background: $red;
 			}
 		}
-		& .product-rating {
-			color: #07ffb5;
-
-			& span {
-				font-weight: 600;
-				color: #ffffff;
-			}
-		}
+		
 		& .product-price {
 			margin: 1rem 0;
 			font-size: 1rem;
-			font-weight: 700;
+			font-weight: 200;
 
 			& span {
-				font-weight: 400;
-				color: #d35680;
+				font-weight: 700;
+				color: #fff;
 			}
 		}
 
 		& .product-detail {
 			& h2 {
 				text-transform: capitalize;
-				color: #63d68d;
+				color: $orange;
 				padding-bottom: 0.6rem;
 			}
 			& p {
@@ -107,28 +86,33 @@ img {
 				opacity: 0.8;
 				width: 50em;
 			}
-			& ul {
+			& .ul {
 				margin: 1rem 0;
 				font-size: 0.9rem;
 				list-style-type: square;
 				margin-left: 1.5em;
+				display: flex;
 
-				& li {
-					margin: 0;
-					list-style: none;
-					background: url(https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/checked.png)
-						left center no-repeat;
-					background-size: 18px;
-					padding-left: 1.7rem;
+				& p {
+					margin-left: 1em ;
+					padding-left: 2rem;
 					margin: 0.4rem 0;
 					font-weight: 600;
-					opacity: 0.9;
+					
 
 					& span {
 						font-weight: 400;
 					}
 				}
 			}
+			& .product-rating {
+			display: block;
+
+			& span {
+				font-weight: 600;
+				color: #ffffff;
+			}
+		}
 		}
 
 		& .purchase-info {
@@ -139,7 +123,7 @@ img {
 
 			& input,
 			.btn {
-				border: 1.5px solid #ddd;
+				border: 1.5px solid #dddddd4a;
 				border-radius: 5px;
 				text-align: center;
 				padding: 0.45rem 0.8rem;
@@ -158,9 +142,11 @@ img {
 				display: inline-flex;
 				justify-content: center;
 				align-items: center;
+				font-weight: bolder;
+				padding: .5em 4em;
 
 				&:first-of-type {
-					background: #256eff;
+					background: $green;
 					width: fit-content;
 				}
 
@@ -171,7 +157,7 @@ img {
 					background-color: transparent;
 					margin-right: 7px;
 					width: 1.5em;
-					fill: $dark;
+					fill: $blue_violet;
 				}
 			}
 		}

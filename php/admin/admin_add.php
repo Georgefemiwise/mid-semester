@@ -221,14 +221,7 @@ if (empty($errors) == true) {
 						<tr class="transition-all hover:bg-gray-100 hover:shadow-lg ">
 						<td class="px-6 py-4 whitespace-nowrap relative ">
 						<div class="flex items-center">
-							<div class="flex-shrink-0 w-10 h-10">
-							<img
-							class="w-10 h-10 rounded-full"
-							src="<?php echo $row['image'];?>;
-"
-							alt=""
-							/>
-							</div>
+							
 							<div class="ml-4">
 							<div class="text-sm font-medium text-gray-900 capitalize"><?php echo $row['author'];?></div>
 							<div class="text-sm text-gray-500"></div>
@@ -265,7 +258,11 @@ if (empty($errors) == true) {
 					
 					
 					</tbody>
+					
+
 		</table>
+
+					<a href="./admin_dashboard.php"class="inline-flex justify-center rounded-md bg-yellow-600 mt-4 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 ">Back Dashboard</a>
 		
 	</div>
 </div>
